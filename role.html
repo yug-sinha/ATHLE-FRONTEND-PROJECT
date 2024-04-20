@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Role | Athlē</title>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="container select">
+      <h1>What brings you to <span class="brand-text">Athlē</span>?</h1>
+      <p id="para">Select your role on Athlē.</p>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="card">
+            <img src="assets/1.jpg" alt="Fitness Newbie" class="img-fluid">
+            <h2>Looking for a fitness trainer</h2>
+            <div class="sub-content">
+              <p>I'm looking for a trainer to start my fitness journey.</p>
+            </div>
+            <div class="tick-mark">✓</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card">
+            <img src="assets/2.jpg" alt="Sports Newbie" class="img-fluid">
+            <h2>Looking for a sports trainer</h2>
+            <div class="sub-content">
+              <p>I'm looking to hire a professional to train me in a particular sport.</p>
+            </div>
+            <div class="tick-mark">✓</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card">
+            <img src="assets/3.jpg" alt="Trainer" class="img-fluid">
+            <h2>Looking for a trainee</h2>
+            <div class="sub-content">
+              <p>I'm a trainer looking for clients to train and help them achieve their goals.</p>
+            </div>
+            <div class="tick-mark">✓</div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="verify.html"><button class="btn btn-pink" >Finish</button></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.card');
+      const finishBtn = document.querySelector('.finish-btn');
+
+      // Add event listener to each card
+      cards.forEach(card => {
+        card.addEventListener('click', function() {
+          // Toggle the selected class to highlight the selected card
+          cards.forEach(c => c.classList.remove('selected'));
+          this.classList.add('selected');
+
+          // Enable the finish button
+          finishBtn.removeAttribute('disabled');
+        });
+      });
+
+      // Add event listener to the finish button
+      finishBtn.addEventListener('click', function() {
+        // Perform action when the finish button is clicked
+        console.log('Finish button clicked');
+      });
+    });
+  </script>
+</body>
+</html>

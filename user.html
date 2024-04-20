@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | Athlē</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="text-center">
+      <h1 class="brand-text">Athlē</h1>
+      <h2>Welcome! Create your profile</h2>
+      <p>Let others get to know you better! You can do these later</p>
+    </div>
+    <div class="col-md-10">
+      <h4 class="card-title">Add your picture</h4>
+      <div class="card-body">
+        <img  id="avatarImage"  src="p1.jpg" alt="Avatar" class="avatar">
+        <input type="file" id="avatarInput" style="display: none;">
+        <div class="choose">
+          <button class="btn btn-pink" onclick="document.getElementById('avatarInput').click();">Choose image</button>
+          <a href=""><p id="choosede" style="color:black;;">Or choose one of our defaults</p></a>
+        </div>
+      </div>
+      <h5 class="card-title  mt-4">Where are you located?</h5>
+      <input type="text" class="form-control" id="location" placeholder="Enter the location">
+      <a href="role.html"><input type="button" class="btn btn-pink mt-4 " id="nextButton" value="Next" disabled></a>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#avatarInput').on('change', function() {
+        if (this.files && this.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function(e) {
+            $('#avatarImage').attr('src', e.target.result);
+          }
+          reader.readAsDataURL(this.files[0]);
+        }
+      });
+
+      $('#location').on('input', function() {
+        if ($(this).val().trim().length > 0) {
+          $('#nextButton').prop('disabled', false);
+        } else {
+          $('#nextButton').prop('disabled', true);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
