@@ -53,7 +53,7 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 For any questions or feedback, please contact:
 - **Yug Sinha** - GitHub Profile
-
+- **Site Link** - https://yug-sinha.github.io/athle/
 Thank you for visiting Athle!
 ```
 
